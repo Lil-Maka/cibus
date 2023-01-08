@@ -1,5 +1,5 @@
 const Home = () => {
-  return <div>CIBUS</div>;
+  return <div>CIBUS APP</div>;
 };
 
 export default Home;
