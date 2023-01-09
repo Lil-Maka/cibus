@@ -2,6 +2,7 @@
 
 import { Box } from "@mui/material";
 import { usePathname } from "next/navigation";
+import Navbar from "../components/Menu";
 
 import "../styles/globals.css";
 
@@ -22,12 +23,10 @@ export default function RootLayout({ children }) {
             display: "flex",
             flexDirection: "column",
             minHeight: "100vh",
-            background: "#f3a465",
+            background: "#f7f8fb",
           }}
         >
-          {path !== "/login" && path !== "/signin" && (
-            <h1>ESTE ES EL NAVBAR</h1>
-          )}
+          {path !== "/login" && path !== "/signin" && <Navbar />}
           {children}
         </Box>
       </body>

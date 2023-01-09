@@ -3,6 +3,7 @@
 import { LoadingButton } from "@mui/lab";
 import { Box, TextField, Typography } from "@mui/material";
 import axios from "axios";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React from "react";
 import { useForm } from "react-hook-form";
@@ -129,6 +130,13 @@ const Signin = () => {
             Crear cuenta
           </LoadingButton>
         </Box>
+
+        <Typography sx={{ pt: 5 }}>
+          ¿Ya tienes una cuenta?{" "}
+          <Link href="/login" style={{ color: "#1D9BF0" }}>
+            Inicia sesión
+          </Link>
+        </Typography>
       </Box>
     </>
   );
