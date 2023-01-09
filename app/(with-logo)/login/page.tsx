@@ -1,6 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { useForm } from "react-hook-form";
+import axios from "axios";
 import { Box, TextField, Typography } from "@mui/material";
 import { LoadingButton } from "@mui/lab";
 import {
@@ -11,7 +13,6 @@ import {
   NEXT_PUBLIC_CIBUS_API,
   REGEX_EMAIL,
 } from "../../../constants";
-import axios from "axios";
 
 type FormData = {
   mail: string;
@@ -73,7 +74,7 @@ const Login = () => {
               message: "Máximo 20 caracteres",
             },
           })}
-          label="Contrasenña"
+          label="Contraseña"
           error={Boolean(errors.password)}
           helperText={errors.password?.message || " "}
           fullWidth
@@ -87,6 +88,13 @@ const Login = () => {
             Iniciar sesión
           </LoadingButton>
         </Box>
+
+        <Typography sx={{ pt: 5 }}>
+          ¿No tienes una cuenta?{" "}
+          <Link href="/signin" style={{ color: "#1D9BF0" }}>
+            Regístrate
+          </Link>
+        </Typography>
       </Box>
     </>
   );
