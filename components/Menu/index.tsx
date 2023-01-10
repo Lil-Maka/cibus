@@ -13,7 +13,6 @@ import {
   ListItem,
   ListItemButton,
   Toolbar,
-  Typography,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -62,7 +61,6 @@ export default function Navbar(props: AppBarProps) {
       <List>
         {navItems.map(({ name, route }) => (
           <>
-            {" "}
             <ListItem key={name} disablePadding>
               <ListItemButton sx={{ textAlign: "center" }}>
                 <Link href={route}>{name}</Link>
@@ -117,7 +115,7 @@ export default function Navbar(props: AppBarProps) {
             }}
           >
             {navItems.map(({ name, route }) => (
-              <Link href={route} style={{ marginLeft: 20 }}>
+              <Link key={name} href={route} style={{ marginLeft: 20 }}>
                 {name}
               </Link>
             ))}
